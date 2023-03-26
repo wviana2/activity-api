@@ -1,0 +1,12 @@
+.mvn/
+.settings
+target/
+.classpath
+.project
+
+
+.gradle/
+.idea/
+build/
+gradle/
+

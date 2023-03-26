@@ -1,0 +1,25 @@
+spring:
+    datasource:
+        type: com.zaxxer.hikari.HikariDataSource
+        url: jdbc:oracle:thin:@localhost:1521/XEPDB1
+        username: ACTIVITY_APP
+        password: activity456
+        hikari:
+           maximum-pool-size: 3
+    jpa:
+      database-platform: org.hibernate.dialect.Oracle12cDialect
+      database: ORACLE
+      show-sql: false
+      format-sql: true
+      hibernate:
+         ddl-auto: update
+      properties:
+         javax.persistence.query.timeout: 20000
+         hibernate.id.new_generator_mappings: true
+         hibernate.cache.use_second_level_cache: false
+         hibernate.cache.region.factory_class: org.hibernate.cache.ehcache.EhCacheRegionFactory
+         hibernate.cache.use_query_cache: false
+         hibernate.generate_statistics: false
+         hibernate.default_schema: ACTIVITY_APP
+         hibernate.show_sql: false
+         hibernate.format_sql: true
