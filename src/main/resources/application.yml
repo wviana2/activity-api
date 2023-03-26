@@ -1,7 +1,7 @@
 spring:
     datasource:
         type: com.zaxxer.hikari.HikariDataSource
-        url: jdbc:oracle:thin:@localhost:1521/XEPDB1
+        url: jdbc:oracle:thin:@192.168.100.19:1521/XEPDB1
         username: ACTIVITY_APP
         password: activity456
         hikari:
