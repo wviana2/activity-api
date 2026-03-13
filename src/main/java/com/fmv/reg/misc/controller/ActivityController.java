@@ -2,7 +2,6 @@ package com.fmv.reg.misc.controller;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -16,6 +15,7 @@ import com.fmv.reg.misc.constants.AppConstants;
 import com.fmv.reg.misc.entity.Activity;
 import com.fmv.reg.misc.model.ActivityResponseWrapper;
 import com.fmv.reg.misc.service.ActivityService;
+import com.fmv.reg.misc.service.OrderService;
 
 @CrossOrigin
 @RestController
@@ -24,8 +24,15 @@ public class ActivityController {
 
 	private static final Logger logger = LogManager.getLogger(ActivityController.class);
 
-	@Autowired
 	private ActivityService activityService;
+	
+	private OrderService orderService;
+	
+	public ActivityController(ActivityService activityService,
+								OrderService orderService) {
+		this.activityService = activityService;
+		this.orderService = orderService;
+	}
 
 	@GetMapping("/activities")
 	public <T> ResponseEntity<ActivityResponseWrapper<T>> getActivities() {

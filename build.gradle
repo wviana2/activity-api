@@ -41,6 +41,8 @@ dependencies {
 	implementation 'org.projectlombok:lombok:1.18.26'
 	annotationProcessor 'org.projectlombok:lombok:1.18.26'
 
+	implementation 'mysql:mysql-connector-java:8.0.23'
+
 	//testImplementation 'junit:junit:4.7'
     testImplementation 'org.junit.jupiter:junit-jupiter:5.9.2'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
